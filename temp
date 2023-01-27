@@ -1,0 +1,16 @@
+hash_Enter_Password = sha256(b'%s' % Q).hexdigest()
+
+
+for password_number in range(0,10):
+    hash_password = sha256(b'%i'% password_number).hexdigest()
+    #print('counter = %i = %s'%(password , hash_password))
+    key2val[hash_password] = password_number
+    # print('key2val = %s'%(key2val))    
+    Hash_Library = open('G:\sha256\Hash_Lib.lib', 'w')
+    Hash_Library.write(str(key2val))
+with open('G:\sha256\hash.csv') as f:
+    psswords_singer = reader(f)
+    for row in psswords_singer:
+        name_users = row[0]
+        for key in row[1:]:
+            print(name_users,':',key2val[key])
