@@ -1,0 +1,30 @@
+MD2
+MD4
+MD5
+SHA-0
+SHA-1
+SHA-2 (SHA-224 , SHA-256 , SHA-384 , SHA-512)
+SHA-3 (Keccak)
+BLAKE (BLAKE2b , BLAKE2s)
+Whirlpool
+RIPEMD (RIPEMD-128 , RIPEMD-160)
+Tiger
+Snefru (Snefru-128 , Snefru-256)
+GOST
+
+SHA-256
+SHA-512
+SHA-3 (Keccak)
+MD5
+SHA-1
+
+SHA-3 (Keccak)
+SHA-2 (SHA-256 , SHA-512)
+SHA-1
+MD5
+BLAKE2
+Whirlpool
+RIPEMD-160
+SHAKE128
+SHAKE256
+TigerHash
