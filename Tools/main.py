@@ -29,6 +29,7 @@ ________________________________________________________________\n'''+ Fore.RESE
     def value(self):
         Val = input(Fore.LIGHTBLUE_EX + "Enter Your Value >>> ")
         self.Protocol()
+        # self.HashSys.__init__(Val)
         return Val
 
     def Protocol(self):

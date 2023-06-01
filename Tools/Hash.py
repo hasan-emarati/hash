@@ -2,12 +2,17 @@ import hashlib
 
 class Hash:
     def __init__(self):
-        self.text = "U".encode('utf-8')
+        self.text = "{Val}".encode('utf-8')
+    
+    # def Riseve(self , Val):
+        # self.text = f"{Val}".encode('utf-8')
+        # print(self.text)
 
     def sha256(self):
+        # print(text)
         Hash_Object = hashlib.sha256(self.text)
         Hex_Dig = Hash_Object.hexdigest()
-        print(Hex_Dig) 
+        print(f"{self.text} : " + Hex_Dig) 
 
     def sha512(self):
         Hash_Object = hashlib.sha512(self.text)
