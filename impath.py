@@ -10,9 +10,10 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 try:
     from Tools.Hash import Hash
     from Tools.choice import choice
+    from Tools.main import main
 
 except ImportError as err:
-    Hash("Failed import some modules", err)
+    main("Failed import some modules", err)
     sys.exit(1)
 
 

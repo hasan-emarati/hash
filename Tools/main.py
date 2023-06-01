@@ -6,7 +6,7 @@ from Hash import Hash
 
 class main:
     def __init__(self):
-        HashSys = Hash 
+        self.HashSys = Hash() 
         print (Fore.YELLOW + '''
            ______  _    _           _     
           |  ____|| |  | |         | |    
@@ -47,31 +47,31 @@ ________________________________________________________________\n'''+ Fore.RESE
             ''' + Fore.RESET)
             Protocol = input(Fore.LIGHTBLUE_EX + "Enter Your Protocol Number >>> ")
             if Protocol == '1' :
-                Hash.sha256()
+                self.HashSys.sha256()
                 break
             elif Protocol == '2' :
-                Hash.sha512()
+                self.HashSys.sha512()
                 break
             elif Protocol == '3' :
-                Hash.sha3_256()
+                self.HashSys.sha3_256()
                 break
             elif Protocol == '4' :
-                Hash.md5()
+                self.HashSys.md5()
                 break
             elif Protocol == '5' :
-                Hash.sha1()
+                self.HashSys.sha1()
                 break
             elif Protocol == '6' :
-                Hash.blake2s()
+                self.HashSys.blake2s()
                 break
             elif Protocol == '7' :
-                Hash.whirlpool()
+                self.HashSys.whirlpool()
                 break
             elif Protocol == '8' :
-                Hash.shake_128()
+                self.HashSys.shake_128()
                 break
             elif Protocol == '9' :
-                Hash.shake_256()
+                self.HashSys.shake_256()
                 break
             else :
                 print(Fore.RED + "Invalid Protocol: " + Protocol + "\nPlease Enter the new Value" + Fore.RESET)
