@@ -1,58 +1,74 @@
 import hashlib
+from colorama import Fore
 
 class Hash:
-    def __init__(self):
-        self.text = "{Val}".encode('utf-8')
-    
-    # def Riseve(self , Val):
-        # self.text = f"{Val}".encode('utf-8')
-        # print(self.text)
+    def value(self):
+        InValue = input(Fore.LIGHTBLUE_EX + "Enter Your Value >>> ")
+        Value = f'{InValue}'.encode('utf-8')
+        return Value , InValue
 
     def sha256(self):
-        # print(text)
+        Value = self.value()
+        self.text = Value[0]
         Hash_Object = hashlib.sha256(self.text)
         Hex_Dig = Hash_Object.hexdigest()
-        print(f"{self.text} : " + Hex_Dig) 
+        print(Fore.MAGENTA + f"{Value[1]} : " + Fore.GREEN + f'{Hex_Dig}' + Fore.RESET) 
 
     def sha512(self):
+        Value = self.value()
+        self.text = Value[0]
         Hash_Object = hashlib.sha512(self.text)
         Hex_Dig = Hash_Object.hexdigest()
-        print(Hex_Dig)
+        print(Fore.MAGENTA + f"{Value[1]} : " + Fore.GREEN + f'{Hex_Dig}' + Fore.RESET)
 
     def sha3_256(self):
+        Value = self.value()
+        self.text = Value[0]
         hash_object = hashlib.sha3_256(self.text)
-        hex_dig = hash_object.hexdigest()
-        print(hex_dig) 
+        Hex_Dig = hash_object.hexdigest()
+        print(Fore.MAGENTA + f"{Value[1]} : " + Fore.GREEN + f'{Hex_Dig}' + Fore.RESET) 
 
-    def md5(self): 
+    def md5(self):
+        Value = self.value()
+        self.text = Value[0]
         hash_object = hashlib.md5(self.text)
-        hex_dig = hash_object.hexdigest()
-        print(hex_dig)
+        Hex_Dig = hash_object.hexdigest()
+        print(Fore.MAGENTA + f"{Value[1]} : " + Fore.GREEN + f'{Hex_Dig}' + Fore.RESET)
     
     def sha1(self):
+        Value = self.value()
+        self.text = Value[0]
         hash_object = hashlib.sha1(self.text)
-        hex_dig = hash_object.hexdigest()
-        print(hex_dig)
+        Hex_Dig = hash_object.hexdigest()
+        print(Fore.MAGENTA + f"{Value[1]} : " + Fore.GREEN + f'{Hex_Dig}' + Fore.RESET)
 
     def blake2s(self):
+        Value = self.value()
+        self.text = Value[0]
         hash_object = hashlib.blake2s(self.text)
-        hex_dig = hash_object.hexdigest()
-        print(hex_dig)
+        Hex_Dig = hash_object.hexdigest()
+        print(Fore.MAGENTA + f"{Value[1]} : " + Fore.GREEN + f'{Hex_Dig}' + Fore.RESET)
 
     def whirlpool(self):
+        Value = self.value()
+        self.text = Value[0]
         hash_object = hashlib.new('whirlpool', self.text)
-        hex_dig = hash_object.hexdigest()
-        print(hex_dig)
+        Hex_Dig = hash_object.hexdigest()
+        print(Fore.MAGENTA + f"{Value[1]} : " + Fore.GREEN + f'{Hex_Dig}' + Fore.RESET)
 
     def shake_128(self):
+        Value = self.value()
+        self.text = Value[0]
         hash_object = hashlib.shake_128(self.text)
-        hex_dig = hash_object.hexdigest(16)
-        print(hex_dig)
+        Hex_Dig = hash_object.hexdigest(16)
+        print(Fore.MAGENTA + f"{Value[1]} : " + Fore.GREEN + f'{Hex_Dig}' + Fore.RESET)
     
     def shake_256(self):
+        Value = self.value()
+        self.text = Value[0]
         hash_object = hashlib.shake_256(self.text)
-        hex_dig = hash_object.hexdigest(16)
-        print(hex_dig)
+        Hex_Dig = hash_object.hexdigest(16)
+        print(Fore.MAGENTA + f"{Value[1]} : " + Fore.GREEN + f'{Hex_Dig}' + Fore.RESET)
 
 if __name__ == '__main__':
     Run = Hash()

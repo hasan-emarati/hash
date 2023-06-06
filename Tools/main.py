@@ -8,15 +8,15 @@ class main:
     def __init__(self):
         self.HashSys = Hash() 
         print (Fore.YELLOW + '''
-           ______  _    _           _     
-          |  ____|| |  | |         | |    
- _ __ ___ | |__   | |__| | __ _ ___| |__  
-| '_ ` _ \|  __|  |  __  |/ _` / __| '_ \ 
-| | | | | | |____ | |  | | (_| \__ \ | | |
-|_| |_| |_|______||_|  |_|\__,_|___/_| |_|                      
-                        
-                      Created by SHemarati 
-________________________________________________________________\n'''+ Fore.RESET)
+                               ______  _    _           _     
+                              |  ____|| |  | |         | |    
+                     _ __ ___ | |__   | |__| | __ _ ___| |__  
+                    | '_ ` _ \|  __|  |  __  |/ _` / __| '_ \ 
+                    | | | | | | |____ | |  | | (_| \__ \ | | |
+                    |_| |_| |_|______||_|  |_|\__,_|___/_| |_|                      
+
+                                          Created by SHemarati 
+    __________________________________________________________________________\n'''+ Fore.RESET)
 
     def IseeHash(self):
         print(f"Searching text: ")
@@ -27,10 +27,8 @@ ________________________________________________________________\n'''+ Fore.RESE
         """
 
     def value(self):
-        Val = input(Fore.LIGHTBLUE_EX + "Enter Your Value >>> ")
+        print (Fore.YELLOW + "___Type the Value___")
         self.Protocol()
-        # self.HashSys.__init__(Val)
-        return Val
 
     def Protocol(self):
         while True:
