@@ -3,10 +3,12 @@ from colorama import Fore, Back, Style, init
 from tkinter.filedialog import askopenfile
 from tkinter import *
 from Hash import Hash
+from P2H import P2H
 
 class main:
     def __init__(self):
         self.HashSys = Hash() 
+        self.P2HSys = P2H()
         print (Fore.YELLOW + '''
                                ______  _    _           _     
                               |  ____|| |  | |         | |    
@@ -22,15 +24,18 @@ class main:
         print(f"Searching text: ")
 
     def P2H(self):
-        """
-        Translate password list to hash.
-        """
+        print(Fore.RED + "              ______Password List to Hash code_____\n" + Fore.RESET)
+        self.P2HSys.test()
 
     def value(self):
-        print (Fore.YELLOW + "___Type the Value___")
-        self.Protocol()
+        print (Fore.RED + "     _______Select Protocol Type_______\n")
+        name  = 'value'
+        self.Protocol(name)
 
-    def Protocol(self):
+    def Protocol(self , name):
+        if name == 'value':
+            Address = self.HashSys
+
         while True:
             print(Fore.YELLOW + "Place Select Your Protocol You Have a Some Protocol : ")
             print('''
@@ -46,31 +51,31 @@ class main:
             ''' + Fore.RESET)
             Protocol = input(Fore.LIGHTBLUE_EX + "Enter Your Protocol Number >>> ")
             if Protocol == '1' :
-                self.HashSys.sha256()
+                Address.sha256()
                 break
             elif Protocol == '2' :
-                self.HashSys.sha512()
+                Address.sha512()
                 break
             elif Protocol == '3' :
-                self.HashSys.sha3_256()
+                Address.sha3_256()
                 break
             elif Protocol == '4' :
-                self.HashSys.md5()
+                Address.md5()
                 break
             elif Protocol == '5' :
-                self.HashSys.sha1()
+                Address.sha1()
                 break
             elif Protocol == '6' :
-                self.HashSys.blake2s()
+                Address.blake2s()
                 break
             elif Protocol == '7' :
-                self.HashSys.whirlpool()
+                Address.whirlpool()
                 break
             elif Protocol == '8' :
-                self.HashSys.shake_128()
+                Address.shake_128()
                 break
             elif Protocol == '9' :
-                self.HashSys.shake_256()
+                Address.shake_256()
                 break
             else :
                 print(Fore.RED + "Invalid Protocol: " + Protocol + "\nPlease Enter the new Value" + Fore.RESET)
@@ -98,44 +103,6 @@ class main:
                 print(Fore.RED + "Invalid InMode: " + InMode)
                 print("Please enter Your new Value" + Fore.RESET)
 
-    def UI(self):
-        try:
-            path = askopenfile(initialdir="/", title="Select file",
-                        filetypes=(("txt files", "*.txt"),("all files", "*.*")))
-            PassWord_List = path.read()
-            print (Fore.GREEN + "File selected" + Fore.RESET)
-        except:
-            print (Fore.RED + "UI Error" + Fore.RESET)
-
-    def Prompt(self):
-        try:
-            print (Fore.MAGENTA + "\t\tType File \"*.txt\"\n")
-            Path = input("Enter Your Directory ==>  " + Fore.RESET)
-            if Path[-3:] == 'txt':
-                Open = open(Path , "r")
-                PassWord_List = Open.read()
-                print (Fore.GREEN + "File selected" + Fore.RESET)
-                return PassWord_List
-            else :
-                print (Fore.RED + "Invalid File" + Fore.RESET)
-        except:
-            print (Fore.RED + "Prompt Error" + Fore.RESET)
-
-    def UandP(self):
-
-        while True :
-            print(Fore.CYAN + "[1] UI Select File")
-            print(Fore.CYAN + "[2] Prompt Select File")
-            choice = input(Fore.BLUE + 'Please select > ' + Fore.RESET)
-            if choice == '1':
-                self.UI()
-                break
-            elif choice == '2':
-                self.Prompt()
-                break
-            else:
-                print(Fore.RED + 'Invalid choice, please try again' + Fore.RESET)
-        
 if __name__ == '__main__':
     my_main_instance = main()
     my_main_instance.StartUp()

@@ -1,5 +1,5 @@
 # Created by SHemarati
-from colorama import Fore, Back, Style, init
+from colorama import Fore
 from tkinter.filedialog import askopenfile
 from tkinter import *
 
